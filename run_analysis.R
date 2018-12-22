@@ -58,8 +58,8 @@ setWithActivityNames <- merge(setForMeanAndStd, activityLabels,
 # 4. Appropriately labeling the data set with the descriptive variable names.
 # 5. Creating a second, independent tidy data set with the average of each variable for each activity and each subject.
 # 5.1 Making a second tidy data set.
-secTidySet <- aggregate(. ~subjectId + activityId, setWithActivityNames, mean)
-secTidySet <- secTidySet[order(secTidySet$subjectId, secTidySet$activityId),]
+secTidyDataSet <- aggregate(. ~subjectId + activityId, setWithActivityNames, mean)
+secTidyDataSet <- secTidyDataSet[order(secTidyDataSet$subjectId, secTidyDataSet$activityId),]
 
 # 5.2 Writing the second tidy data set in txt file.
-write.table(secTidySet, "secTidySet.txt", row.name=FALSE)
+write.table(secTidyDataSet, "secTidyDataSet.txt", row.name=FALSE)
